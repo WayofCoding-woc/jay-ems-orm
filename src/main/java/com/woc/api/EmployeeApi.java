@@ -2,6 +2,8 @@ package com.woc.api;
 
 import com.woc.dao.EmployeeDao;
 import com.woc.model.Employee;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +17,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class EmployeeApi {
 
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeApi.class);
 
     @Autowired
     private EmployeeDao employeeDao;
@@ -78,7 +81,10 @@ public class EmployeeApi {
 
     @GetMapping("/employee/all")
     public List<Employee> fetchAllEmployee(){
-        return employeeDao.fetchAllEmployee();
+        List<Employee> employees = employeeDao.fetchAllEmployee();
+        System.out.println("employees.size()="+employees.size());
+        logger.info("using the logger, employees.size()="+employees.size());
+        return employees;
     }
 
 
