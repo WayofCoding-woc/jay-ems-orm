@@ -1,0 +1,12 @@
+cd ~/Jay/jay-ems-orm
+git init .
+git add .
+git status
+git commit -m "Initializing the project"
+Now go the github and create a repository say(jay-ems-orm)
+git remote add origin https://github.com/WayofCoding-woc/jay-ems-orm.git
+git push -u origin master
+
+
+we can chekout the repository in our computer using the below command
+git clone https://github.com/WayofCoding-woc/jay-ems-orm.git
